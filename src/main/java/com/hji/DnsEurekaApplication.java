@@ -26,6 +26,7 @@ public class DnsEurekaApplication {
 	private int port;
 
 	@Bean
+	@RefreshScope
 	public EurekaInstanceConfigBean eurekaInstanceConfig(InetUtils inetUtils) {
 		EurekaInstanceConfigBean config = new EurekaInstanceConfigBean(inetUtils);
 		AmazonInfo info = AmazonInfo.Builder.newBuilder().autoBuild("eureka");
